@@ -99,7 +99,7 @@ try:
             key=x.__next__()
             createNewConnection(name, name, key)
             connect(name, name)
-            time.sleep(15)
+            time.sleep(5)
             MR=chack_wifi()
             if MR==1:
                 print("Wifi password is cracked : "+key) 
