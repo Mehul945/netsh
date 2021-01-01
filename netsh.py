@@ -12,9 +12,10 @@ def chack_wifi():
             return 1
         else:
             return 0
+passlist=input("Enter password list name : ")
 u=int(input("Enter how much try you password : "))
 def password():
-    with open("pass.txt") as f:
+    with open(passlist+'.txt') as f:
         for i in range(u):
             text=next(f)
             yield text
@@ -101,8 +102,9 @@ try:
             connect(name, name)
             time.sleep(5)
             MR=chack_wifi()
+            print(MR)
             if MR==1:
-                print("Wifi password is cracked : "+key) 
+                print("Wifi password is cracked : "+key)
                 break
             else:
                 os.remove("OUTPUT.txt")
