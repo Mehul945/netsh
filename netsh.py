@@ -9,7 +9,6 @@ def chack_wifi():
     with open("OUTPUT.txt") as f:
         text=f.read()
         if "Default Gateway . . . . . . . . . :" in text:
-            print("Wifi is connected")
             return 1
         else:
             return 0
@@ -102,9 +101,8 @@ try:
             connect(name, name)
             time.sleep(15)
             MR=chack_wifi()
-            print(MR)
             if MR==1:
-                print(key)
+                print("Wifi password is cracked : "+key) 
                 break
             else:
                 os.remove("OUTPUT.txt")
